@@ -1,8 +1,8 @@
 module.exports = {
   title: 'Tech Dev Guide', // Required
   author: 'Gulshan Saini', // Required
-  description: 'Learning Resource For Full-stack Web Developer',
-  primaryColor: '#3498db', // Required
+  description: 'Learning Resource For Full-stack Developer',
+  primaryColor: '#616161', // Required
   showHeaderImage: true,
   showShareButtons: true,
   postsPerPage: 5, // Required
@@ -12,6 +12,6 @@ module.exports = {
     twitter: 'https://twitter.com/gulshansainis',
     linkedin: 'https://linkedin.com/in/gulshansainis',
   },
-  pathPrefix: '/',
+  pathPrefix: '/techdevguide',
   siteUrl: 'https://techdevguide.com',
 };
