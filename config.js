@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Tech Dev Guide', // Required
   author: 'Gulshan Saini', // Required
-  description: 'Full-stack Web Developer',
+  description: 'Learning Resource For Full-stack Web Developer',
   primaryColor: '#3498db', // Required
   showHeaderImage: true,
   showShareButtons: true,

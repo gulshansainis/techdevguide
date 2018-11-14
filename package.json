@@ -1,10 +1,10 @@
 {
-  "name": "devblog",
-  "description": "GatsbyJS blog template for developers",
-  "version": "2.0.0",
-  "author": "Ryan Fitzgerald <ryanfitzgeralddev@gmail.com>",
+  "name": "techdevguide",
+  "description": "Learning Resource For Full-stack Web Developer",
+  "version": "1.0.0",
+  "author": "Gulshan Saini <gulshan.saini@gmail.com>",
   "bugs": {
-    "url": "https://github.com/ryanfitzgerald/devblog/issues"
+    "url": "https://github.com/gulshansainis/techdevguide/issues"
   },
   "dependencies": {
     "gatsby": "^2.0.31",
@@ -38,18 +38,18 @@
     "gh-pages": "^1.1.0",
     "prettier": "^1.12.0"
   },
-  "homepage": "https://github.com/ryanfitzgerald/devblog#readme",
+  "homepage": "https://github.com/gulshansainis/techdevguide#readme",
   "keywords": [
     "gatsby",
     "dev",
     "blog",
-    "dev blog"
+    "tech dev guide blog"
   ],
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ryanfitzgerald/devblog.git"
+    "url": "git+https://github.com/gulshansainis/techdevguide.git"
   },
   "scripts": {
     "dev": "gatsby develop",
