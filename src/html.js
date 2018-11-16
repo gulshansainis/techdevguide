@@ -15,6 +15,7 @@ export default class HTML extends React.Component {
           />
           {this.props.headComponents}
           <link rel="shortcut icon" href={favicon} />
+          <link rel="preconnect" href="//fonts.googleapis.com" crossOrigin="true" />
         </head>
         <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}
