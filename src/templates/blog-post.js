@@ -41,11 +41,11 @@ class BlogPostTemplate extends React.Component {
           </Helmet>
           <Card>
             <ArticleHeader>
-              {post.frontmatter.featuredImage && (
+              {/* {post.frontmatter.featuredImage && (
                 <FeaturedImage
                   sizes={post.frontmatter.featuredImage.childImageSharp.sizes}
                 />
-              )}
+              )} */}
               <h1>{post.frontmatter.title}</h1>
               <p>{post.frontmatter.date}</p>
               <span />
@@ -93,13 +93,6 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        featuredImage {
-          childImageSharp {
-            sizes(maxWidth: 850) {
-              ...GatsbyImageSharpSizes
-            }
-          }
-        }
       }
     }
   }
