@@ -14,7 +14,7 @@ injectGlobal`
 
   html {
     font-family: Droid Serif,serif;
-    font-size: 90%;
+    font-size: 85%;
     line-height: 1.6;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
