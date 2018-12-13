@@ -1,7 +1,7 @@
 ---
 title: What is Interpreter?
 date: "2018-12-05"
-tags: nodejs
+tags: computer-basics
 featuredImage: 
 ---
 
