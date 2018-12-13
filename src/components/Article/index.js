@@ -3,7 +3,8 @@ import userConfig from '../../../config';
 
 const Article = styled.article`
   color: #65738c;
-  font-size: 16px;
+  font-size: 1.5rem;
+  line-height: 1.8;
 
   a {
     color: ${userConfig.primaryColor};

@@ -4,7 +4,7 @@ import styledNormalize from 'styled-normalize';
 injectGlobal`
   ${styledNormalize}
   
-  @import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+  @import url("https://fonts.googleapis.com/css?family=Droid+Serif:400,700|Catamaran:100,400,700");
   
   *,
   *:before,
@@ -13,7 +13,9 @@ injectGlobal`
   }
 
   html {
-    font-size: 62.5%;
+    font-family: Droid Serif,serif;
+    font-size: 90%;
+    line-height: 1.6;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     box-sizing: border-box;
@@ -21,11 +23,48 @@ injectGlobal`
 
   body {
     background: #f9fafc;
-    font-family: 'Open Sans', sans-serif; 
+    font-family: Catamaran, 'Open Sans', sans-serif; 
     line-height: 1.5;
     padding: 50px 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1 {
+    font-size: 2.4414rem
+  }
+
+  h1,h2 {
+      line-height: 2.7rem;
+      margin-bottom: 1.53rem
+  }
+
+  h2 {
+      font-size: 1.9531rem
+  }
+
+  h3 {
+      font-size: 1.5625rem
+  }
+
+  h3,h4 {
+      line-height: 1.8rem;
+      margin-bottom: 1.53rem
+  }
+
+  h4 {
+      font-size: 1.25rem
+  }
+
+  h5,h6 {
+      font-size: 1rem;
+      line-height: 1.8rem;
+      margin-bottom: 1.53rem
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+      font-family: Catamaran,sans-serif;
+      font-weight: 400
   }
 
   img {
