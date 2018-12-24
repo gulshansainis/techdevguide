@@ -2,7 +2,7 @@
 title: What is Node.js?
 date: "2018-12-05"
 tags: nodejs
-spoiler: 
+spoiler: Simplified and quick intro to Node.js
 ---
 
 Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. Before we look at Node.js we should get familiar with V8.

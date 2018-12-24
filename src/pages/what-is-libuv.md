@@ -2,7 +2,7 @@
 title: What is libuv?
 date: "2018-12-20"
 tags: nodejs
-spoiler: 
+spoiler: A quick intro to libuv - Node internals
 ---
 
 libuv is C++ open source library that gives Node.js access to OS internals, Networking and Concurrency. It was primarily developed for use by Node.js, but it's also used by Luvit, Julia, pyuv, and others.

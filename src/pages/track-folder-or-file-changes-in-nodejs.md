@@ -2,7 +2,7 @@
 title: How to track folder or file changes in Node.js?
 date: "2018-12-13"
 tags: nodejs
-spoiler: 
+spoiler: Watch folder(s) when its contents are changed
 ---
 
 ## Problem
