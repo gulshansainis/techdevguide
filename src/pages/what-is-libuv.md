@@ -26,5 +26,5 @@ libuv is built on top of epoll/kequeue/event ports/etc on Unix and IOCP on Windo
 - Threading and synchronization primitives
 
 ## Architecture Diagram
-![libuv architecture diagram](node-architecture.png "libuv architecture diagram")
+![libuv architecture diagram](./node-architecture.png "libuv architecture diagram")
 *Image Source: http://docs.libuv.org/en/v1.x/design.html*
