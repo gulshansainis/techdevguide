@@ -1,83 +1,104 @@
-import {graphql} from 'gatsby';
-import Helmet from 'react-helmet';
-import get from 'lodash/get';
-import React from 'react';
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import get from 'lodash/get'
 
-import userConfig from '../../config';
+import Bio from '../components/Bio'
+import Layout from '../components/Layout'
+import SEO from '../components/SEO'
+import { formatReadingTime } from '../utils/helpers'
+import { rhythm, scale } from '../utils/typography'
 
-import Layout from './layout';
-
-import Article from '../components/Article';
-import ArticleHeader from '../components/ArticleHeader';
-import Button from '../components/Button';
-import Card from '../components/Card';
-import Container from '../components/Container';
-import FeaturedImage from '../components/FeaturedImage';
-import PageNav from '../components/PageNav';
-import Share from '../components/Share';
+const GITHUB_USERNAME = 'gulshansainis'
+const GITHUB_REPO_NAME = 'techdevguide'
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark;
-    const author = get(this.props, 'data.site.siteMetadata.author');
-    const { previous, next } = this.props.pageContext;
-
-    let url = '';
-    if (typeof window !== `undefined`) {
-      url = window.location.href;
-    }
-
+    const post = this.props.data.markdownRemark
+    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+    const { previous, next, slug } = this.props.pageContext
+    const editUrl = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_NAME}/edit/master/src/pages/${slug.replace(/\//g, '')}.md`
     return (
-      <Layout>
-        <Container>
-          <Helmet
-            title={`${post.frontmatter.title} | ${author}`}
-            htmlAttributes={{ lang: 'en' }}
+      <Layout location={this.props.location} title={siteTitle}>
+        <SEO
+          title={post.frontmatter.title}
+          description={post.frontmatter.spoiler}
+          slug={post.fields.slug}
+        />
+        <h1>{post.frontmatter.title}</h1>
+        <p
+          style={{
+            ...scale(-1 / 5),
+            display: 'block',
+            marginBottom: rhythm(1),
+            marginTop: rhythm(-1),
+          }}
+        >
+          {post.frontmatter.date}
+          {` • ${formatReadingTime(post.timeToRead)}`}
+        </p>
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <p>
+          <a
+            href={editUrl}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <meta
-              name="description"
-              content={`${userConfig.title} | ${userConfig.description}`}
-            />
-          </Helmet>
-          <Card>
-            <ArticleHeader>
-              {/* {post.frontmatter.featuredImage && (
-                <FeaturedImage
-                  sizes={post.frontmatter.featuredImage.childImageSharp.sizes}
-                />
-              )} */}
-              <h1>{post.frontmatter.title}</h1>
-              <p>{post.frontmatter.date}</p>
-              <span />
-            </ArticleHeader>
-            <Article>
-              <div dangerouslySetInnerHTML={{ __html: post.html }} />
-            </Article>
-            {userConfig.showShareButtons && (
-              <Share url={url} title={post.frontmatter.title} />
-            )}
-          </Card>
-
-          <PageNav>
+            Edit on GitHub
+          </a>
+        </p>
+        <hr
+          style={{
+            marginBottom: rhythm(1),
+          }}
+        />
+        <h3
+          style={{
+            fontFamily: 'Montserrat, sans-serif',
+            marginTop: rhythm(0.25),
+          }}
+        >
+          <Link
+            style={{
+              boxShadow: 'none',
+              textDecoration: 'none',
+              color: '#ffa7c4',
+            }}
+            to={'/'}
+          >
+            Techdevguide
+          </Link>
+        </h3>
+        <Bio />
+        <ul
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'space-between',
+            listStyle: 'none',
+            padding: 0,
+          }}
+        >
+          <li>
             {previous && (
-              <Button to={previous.fields.slug} rel="prev">
+              <Link to={previous.fields.slug} rel="prev">
                 ← {previous.frontmatter.title}
-              </Button>
+              </Link>
             )}
-
+          </li>
+          <li>
             {next && (
-              <Button to={next.fields.slug} rel="next">
+              <Link to={next.fields.slug} rel="next">
                 {next.frontmatter.title} →
-              </Button>
+              </Link>
             )}
-          </PageNav>
-        </Container>
+          </li>
+        </ul>
       </Layout>
-    );
+    )
   }
 }
 
-export default BlogPostTemplate;
+export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -90,10 +111,15 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
+      timeToRead
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        spoiler
+      }
+      fields {
+        slug
       }
     }
   }
-`;
+`

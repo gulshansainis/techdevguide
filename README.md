@@ -1,6 +1,6 @@
-# Tech Dev Guide
+# techdevguide.com
 
-A blog for developers by developer - lets learn together
+My personal blog. 
 
-## Starter template
-Thanks to @RyanFitzgerald for starter template https://github.com/RyanFitzgerald/devblog
+**Theme**
+Forked from [Dan Abramov blog](https://github.com/gaearon/overreacted.io)
