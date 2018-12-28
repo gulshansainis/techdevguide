@@ -9,7 +9,7 @@ spoiler: Deep dive into creating and exporting functions and objects from module
 
 In Node.js each file is treated as separate module. For example, consider below code
 
-```javascript
+```jsx
 // ES5 syntax - file math.js
 module.exports.add = () => a + b
 ```
@@ -18,7 +18,7 @@ module.exports.add = () => a + b
 
 Each module is wrapped in function by Node.js before execution as shown below
 
-```javascript
+```jsx
 ;(function(exports, require, module, __filename, __dirname) {
   // Module code actually lives in here
 })
@@ -26,7 +26,7 @@ Each module is wrapped in function by Node.js before execution as shown below
 
 During execution our code will look like the following:
 
-```javascript
+```jsx
 // ES5 syntax - file math.js
 ;(function(exports, require, module, __filename, __dirname) {
   module.exports.add = () => a + b
@@ -50,7 +50,7 @@ Lets look at couple of other **ways to export functions or objects** from module
 
 It is the same approach that we discussed eariler however mentioning it again so that its easy to compare everything at same place instead of scrolling up and down on page
 
-```javascript
+```jsx
 // ES5 syntax - file math.js
 module.exports.add = () => a + b
 
@@ -63,7 +63,7 @@ console.log(add(1, 9)) // Output - 10
 
 In second approach we can omit the `module` keyword and just keep `exports` - its a shortcut
 
-```javascript
+```jsx
 // ES5 syntax - file math.js
 exports.add = () => a + b
 
@@ -76,7 +76,7 @@ console.log(add(1, 9)) // Output - 10
 
 Assigning `module.exports` to **function**
 
-```javascript
+```jsx
 // ES5 syntax - file math.js
 module.exports = (a, b) => a + b
 
@@ -87,7 +87,7 @@ console.log(add(1, 9)) // Output - 10
 
 Assigning `module.exports` to **class**
 
-```javascript
+```jsx
 // ES5 syntax - file square.js
 module.exports = class Square {
   constructor(width) {
@@ -107,7 +107,7 @@ console.log(mySquare.area()) // Output - 4
 
 Assigning `module.exports` to **object**
 
-```javascript
+```jsx
 // ES5 syntax - file user.js
 module.exports = { name: 'Gulshan Saini', age: '36' }
 
@@ -122,7 +122,7 @@ We can even export multiple function from module which again can be achieved usi
 
 1. In first approach we export the function separately
 
-```javascript
+```jsx
 // ES5 syntax - file math.js
 module.exports.add = (a, b) => a + b
 module.exports.subtract = (a, b) => a - b
@@ -137,7 +137,7 @@ console.log(multiply(2, 2)) // Output - 4
 
 2. In second approach we export as object
 
-```javascript
+```jsx
 // ES5 syntax - file math.js
 const add = (a, b) => a + b
 const subtract = (a, b) => a - b
@@ -159,7 +159,7 @@ console.log(multiply(2, 2)) // Output - 4
 
 You may even rename the exported function as follows
 
-```javascript
+```jsx
 // ES5 syntax - file math.js
 const add = (a, b) => a + b
 
@@ -174,7 +174,7 @@ See, how we renamed `add` to `addition` while exporting.
 
 **Renaming** can also be achieved using `as` keyword
 
-```javascript
+```jsx
 // ES5 syntax - file math.js
 const add = (a, b) => a + b
 
