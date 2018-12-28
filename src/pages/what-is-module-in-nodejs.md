@@ -5,7 +5,7 @@ tags: nodejs
 spoiler: Deep dive into creating and exporting functions and objects from modules
 ---
 
-## What is Module in Node.js?
+## Module in Node.js?
 
 In Node.js each file is treated as separate module. For example, consider below code
 
@@ -128,7 +128,7 @@ module.exports.add = (a, b) => a + b
 module.exports.subtract = (a, b) => a - b
 module.exports.multiply = (a, b) => a * b
 
-// ES5 syntax - file index.js
+// ES6 syntax - file index.js
 const { add, subtract, multiply } = require('./math')
 console.log(add(1, 9)) // Output - 10
 console.log(subtract(9, 1)) // Output - 8
@@ -143,9 +143,13 @@ const add = (a, b) => a + b
 const subtract = (a, b) => a - b
 const multiply = (a, b) => a * b
 
+// ES5 way
+// module.exports = { add: add, subtract: subtract, multiply: multiply }
+
+// OR ES6 way
 module.exports = { add, subtract, multiply }
 
-// ES5 syntax - file index.js
+// ES6 syntax - file index.js
 const { add, subtract, multiply } = require('./math')
 
 console.log(add(1, 9)) // Output - 10
@@ -161,14 +165,14 @@ const add = (a, b) => a + b
 
 module.exports = { addition: add }
 
-// ES5 syntax - file index.js
+// ES6 syntax - file index.js
 const { addition } = require('./math')
 console.log(addition(1, 9)) // Output - 10
 ```
 
 See, how we renamed `add` to `addition` while exporting.
 
-**Renaming** can also be acieved using `as` keyword
+**Renaming** can also be achieved using `as` keyword
 
 ```javascript
 // ES5 syntax - file math.js
@@ -176,7 +180,7 @@ const add = (a, b) => a + b
 
 module.exports = { add as addition }
 
-// ES5 syntax - file index.js
+// ES6 syntax - file index.js
 const { addition } = require('./math')
 console.log(addition(1, 9)) // Output - 10
 ```
