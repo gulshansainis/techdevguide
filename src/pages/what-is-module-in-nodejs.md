@@ -11,6 +11,7 @@ In Node.js each file is treated as separate module. For example, consider below 
 
 ```jsx
 // ES5 syntax - file math.js
+// highlight-next-line
 module.exports.add = () => a + b
 ```
 
@@ -27,10 +28,12 @@ Each module is wrapped in function by Node.js before execution as shown below
 During execution our code will look like the following:
 
 ```jsx
+// highlight-start
 // ES5 syntax - file math.js
 ;(function(exports, require, module, __filename, __dirname) {
   module.exports.add = () => a + b
 })
+// highlight-end
 ```
 
 ### Now you might be thinking why Node.js wraps our code inside function
@@ -52,6 +55,7 @@ It is the same approach that we discussed eariler however mentioning it again so
 
 ```jsx
 // ES5 syntax - file math.js
+// highlight-next-line
 module.exports.add = () => a + b
 
 // ES5 syntax - file index.js
@@ -65,6 +69,7 @@ In second approach we can omit the `module` keyword and just keep `exports` - it
 
 ```jsx
 // ES5 syntax - file math.js
+// highlight-next-line
 exports.add = () => a + b
 
 // ES5 syntax - file index.js
@@ -78,6 +83,7 @@ Assigning `module.exports` to **function**
 
 ```jsx
 // ES5 syntax - file math.js
+// highlight-next-line
 module.exports = (a, b) => a + b
 
 // ES5 syntax - file index.js
@@ -89,6 +95,7 @@ Assigning `module.exports` to **class**
 
 ```jsx
 // ES5 syntax - file square.js
+// highlight-start
 module.exports = class Square {
   constructor(width) {
     this.width = width
@@ -98,6 +105,7 @@ module.exports = class Square {
     return this.width ** 2
   }
 }
+// highlight-end
 
 // ES5 syntax - file index.js
 const Square = require('./square.js')
@@ -109,6 +117,7 @@ Assigning `module.exports` to **object**
 
 ```jsx
 // ES5 syntax - file user.js
+// highlight-next-line
 module.exports = { name: 'Gulshan Saini', age: '36' }
 
 // ES5 syntax - file index.js
@@ -124,9 +133,11 @@ We can even export multiple function from module which again can be achieved usi
 
 ```jsx
 // ES5 syntax - file math.js
+// highlight-start
 module.exports.add = (a, b) => a + b
 module.exports.subtract = (a, b) => a - b
 module.exports.multiply = (a, b) => a * b
+// highlight-end
 
 // ES6 syntax - file index.js
 const { add, subtract, multiply } = require('./math')
@@ -147,6 +158,7 @@ const multiply = (a, b) => a * b
 // module.exports = { add: add, subtract: subtract, multiply: multiply }
 
 // OR ES6 way
+// highlight-next-line
 module.exports = { add, subtract, multiply }
 
 // ES6 syntax - file index.js
@@ -162,7 +174,7 @@ You may even rename the exported function as follows
 ```jsx
 // ES5 syntax - file math.js
 const add = (a, b) => a + b
-
+// highlight-next-line
 module.exports = { addition: add }
 
 // ES6 syntax - file index.js
@@ -177,7 +189,7 @@ See, how we renamed `add` to `addition` while exporting.
 ```jsx
 // ES5 syntax - file math.js
 const add = (a, b) => a + b
-
+// highlight-next-line
 module.exports = { add as addition }
 
 // ES6 syntax - file index.js
