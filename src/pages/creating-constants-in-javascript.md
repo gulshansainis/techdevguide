@@ -32,7 +32,7 @@ console.log(NAME)
 
 Since, `NAME` is normal variable defined with keyword `var` we are allowed to assign new value wihout any errors.
 
-## Declaring contstant with `const` keyword in ES6
+## Declaring constants with `const` keyword in ES6
 
 **`ES6`** introduced keyword `const` to mark variables as constant. After prefixing variable with `const` keyword if you try to assign new value to variable - JavaScript would throw error
 
