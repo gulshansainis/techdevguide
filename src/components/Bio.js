@@ -2,7 +2,7 @@ import React from 'react'
 
 // Import typefaces
 import 'typeface-montserrat'
-import 'typeface-merriweather'
+import 'typeface-catamaran'
 
 import profilePic from './profile-pic.jpg'
 import { rhythm } from '../utils/typography'
@@ -27,9 +27,9 @@ class Bio extends React.Component {
           }}
         />
         <p style={{ maxWidth: 310 }}>
-          Personal blog by <a href="https://twitter.com/gulshansainis">Gulshan Saini</a>.
-          {' '}
-          For&nbsp;developer by developer.
+          Personal blog by{' '}
+          <a href="https://twitter.com/gulshansainis">Gulshan Saini</a>.{' '}
+          For&nbsp;developer, by developer.
         </p>
       </div>
     )

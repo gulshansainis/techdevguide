@@ -9,8 +9,19 @@ Wordpress2016.overrideThemeStyles = () => ({
     boxShadow: 'none',
   },
   'p code': {
-    fontSize: '1.1rem'
-  }
+    fontSize: '1.1rem',
+  },
+  'h1,h2,h3,h4,h5,h6': {
+    fontFamily: ['Catamaran', 'sans-serif'].join(','),
+    // fontWeight: 600,
+    letterSpacing: '2px',
+  },
+  h1: {
+    borderBottom: '1px dotted #d6d9e0',
+  },
+  body: {
+    fontFamily: ['Montserrat', 'sans-serif'].join(','),
+  },
 })
 
 delete Wordpress2016.googleFonts
